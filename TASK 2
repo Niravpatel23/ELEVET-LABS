@@ -1,0 +1,33 @@
+Phishing Email Analysis Task Report
+Task Overview
+Objective: Identify phishing characteristics in a suspicious email sample.
+Tools: Email client or saved email file (text), free online header analyzer.
+Deliverables: A report listing phishing indicators found.
+Step-by-Step Process
+Step 1: Obtain a Phishing Email Sample
+Use a sample from websites like PhishTank, Scamicide, or search for 'phishing email samples'. Example used here:
+
+From: PayPal <support@paypal-secure.com>
+Subject: Urgent: Account Suspension Warning
+Body: Dear user, we noticed suspicious activity in your account. Log in now to prevent suspension: http://paypal-security-alert.com
+Step 2: Check Sender’s Email Address
+Look for spoofing or suspicious domains. Example: 'support@paypal-secure.com' is a fake PayPal domain.
+Step 3: Analyze Email Headers
+Use tools like Google Admin Toolbox or MXToolbox to check discrepancies in headers like 'Return-Path' and 'Reply-To'.
+Step 4: Identify Suspicious Links or Attachments
+Hover over links to see the actual URL. Check for shortened URLs or non-secure links. Look for suspicious file attachments.
+Step 5: Look for Urgent or Threatening Language
+Phishing emails often contain pressure tactics like 'Your account will be locked' or 'Immediate action required'.
+Step 6: Check for Spelling or Grammar Mistakes
+Look for awkward phrasing, typos, or grammatical errors in the email content.
+Step 7: Summarize Findings
+Create a report listing the phishing indicators found in the email.
+Phishing Email Analysis Report
+Sample Email Subject: Urgent: Account Suspension Warning
+Sender: support@paypal-secure.com
+Phishing Indicators Found:
+•	1. Fake Email Address: 'paypal-secure.com' is not a legitimate PayPal domain.
+•	2. Suspicious Link: The URL redirects to 'paypal-security-alert.com', which is not secure.
+•	3. Header Mismatch: 'Reply-To' and 'Return-Path' differ from sender's address.
+•	4. Urgent Language: Uses threat-based language to pressure user.
+•	5. Grammar Issues: Contains minor grammatical errors and unnatural phrasing.
