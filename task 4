@@ -1,0 +1,39 @@
+Firewall Configuration Guide: Windows and Linux
+
+Deliverables
+
+Windows Firewall Configuration
+- Commands/GUI Steps:
+  - Open Windows Defender Firewall with Advanced Security via Control Panel > System and Security > Windows Defender Firewall > Advanced Settings.
+  - Create new inbound rule: Port > TCP > Specific local ports: 23 > Block the connection > Apply to all profiles > Name: Block Telnet Port 23.
+  - Test connection: telnet localhost 23 (expected: connection fails).
+  - Delete rule: Right-click Block Telnet Port 23 > Delete.
+  - PowerShell Alternative:
+    New-NetFirewallRule -Name "BlockTelnet" -DisplayName "Block Telnet Port 23" -Protocol TCP -LocalPort 23 -Action Block
+    Test-NetConnection -ComputerName localhost -Port 23
+    Remove-NetFirewallRule -Name "BlockTelnet"
+- Configuration Output:
+  Name: BlockTelnet
+  DisplayName: Block Telnet Port 23
+  Protocol: TCP
+  LocalPort: 23
+  Action: Block
+
+Linux UFW Configuration
+- Commands:
+  sudo apt install ufw
+  sudo ufw enable
+  sudo ufw status
+  sudo ufw deny 23/tcp
+  telnet localhost 23
+  sudo ufw allow 22/tcp
+  sudo ufw delete deny 23/tcp
+- Configuration Output:
+  Status: active
+  To                         Action      From
+  --                         ------      ----
+  22/tcp                     ALLOW       Anywhere
+  23/tcp                     DENY        Anywhere (before deletion)
+
+Summary: How Firewalls Filter Traffic
+Firewalls control network traffic by enforcing rules based on port, protocol, source/destination IP, and direction (inbound/outbound). They inspect packet headers, applying actions (allow/deny) if a rule matches or using the default policy (e.g., deny all) if no match exists, ensuring secure traffic flow.
